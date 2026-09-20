@@ -3,39 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inventario Pro</title>
+    <title>Inventory Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div id="loginScreen" class="login-screen">
-      <div class="login-card">
-        <div class="login-header">
-          <div class="brand-icon">I</div>
+      <div class="login-shell">
+        <div class="login-brand">
+          <div class="brand-mark">I</div>
           <div>
-            <h1>Inventario Pro</h1>
-            <p>Sistema de gestión y stock</p>
+            <h1>Inventory Pro</h1>
+            <p>Gestión de inventario y operaciones</p>
           </div>
         </div>
 
-        <div class="login-body">
-          <div class="login-badges">
-            <span class="badge">S/ Soles</span>
-            <span class="badge badge-soft">ERP</span>
+        <div class="login-form">
+          <div class="login-tags">
+            <span>S/ Soles</span>
+            <span class="soft">ERP</span>
           </div>
 
-          <label>
+          <label class="field">
             <span>Usuario</span>
             <input id="usernameInput" type="text" value="admin" />
           </label>
 
-          <label>
+          <label class="field">
             <span>Contraseña</span>
             <input id="passwordInput" type="password" value="admin123" />
           </label>
 
-          <button id="loginBtn" class="primary-btn">Ingresar</button>
-          <p class="login-hint">Demo: admin / admin123</p>
+          <button id="loginBtn" class="primary-btn w-100">Ingresar</button>
           <div id="loginError" class="login-error"></div>
+          <p class="login-hint">Demo: admin / admin123</p>
         </div>
       </div>
     </div>
@@ -43,15 +46,15 @@
     <div id="app" class="app hidden">
       <aside class="sidebar">
         <div class="brand-block">
-          <div class="brand-icon">I</div>
+          <div class="brand-mark">I</div>
           <div>
-            <h2>Inventario Pro</h2>
-            <small>Panel empresarial</small>
+            <strong>Inventory Pro</strong>
+            <small>Centro de control</small>
           </div>
         </div>
 
         <nav class="nav">
-          <div class="nav-section">General</div>
+          <div class="nav-group-label">General</div>
           <button class="nav-item active" data-view="dashboard"><span>◫</span> Dashboard</button>
           <button class="nav-item" data-view="products"><span>▣</span> Productos</button>
           <button class="nav-item" data-view="purchases"><span>◭</span> Compras</button>
@@ -81,10 +84,10 @@
           </div>
 
           <div class="header-actions">
-            <div class="toolbar-search">
+            <label class="toolbar-search">
               <span>⌕</span>
-              <input type="text" id="globalSearch" placeholder="Buscar producto" />
-            </div>
+              <input id="globalSearch" type="text" placeholder="Buscar producto" />
+            </label>
             <button class="secondary-btn" id="exportBtn">Exportar</button>
             <button class="primary-btn" id="quickActionBtn">+ Nueva operación</button>
           </div>
@@ -97,294 +100,6 @@
     <script src="app.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
