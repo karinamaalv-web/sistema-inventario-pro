@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventario Pro</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="loginScreen" class="login-screen">
+      <div class="login-card">
+        <div class="login-header">
+          <div class="brand-icon">I</div>
+          <div>
+            <h1>Inventario Pro</h1>
+            <p>Sistema de gestión y stock</p>
+          </div>
+        </div>
+
+        <div class="login-body">
+          <div class="login-badges">
+            <span class="badge">S/ Soles</span>
+            <span class="badge badge-soft">ERP</span>
+          </div>
+
+          <label>
+            <span>Usuario</span>
+            <input id="usernameInput" type="text" value="admin" />
+          </label>
+
+          <label>
+            <span>Contraseña</span>
+            <input id="passwordInput" type="password" value="admin123" />
+          </label>
+
+          <button id="loginBtn" class="primary-btn">Ingresar</button>
+          <p class="login-hint">Demo: admin / admin123</p>
+          <div id="loginError" class="login-error"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="app" class="app hidden">
+      <aside class="sidebar">
+        <div class="brand-block">
+          <div class="brand-icon">I</div>
+          <div>
+            <h2>Inventario Pro</h2>
+            <small>Panel empresarial</small>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <div class="nav-section">General</div>
+          <button class="nav-item active" data-view="dashboard"><span>◫</span> Dashboard</button>
+          <button class="nav-item" data-view="products"><span>▣</span> Productos</button>
+          <button class="nav-item" data-view="purchases"><span>◭</span> Compras</button>
+          <button class="nav-item" data-view="sales"><span>◍</span> Ventas</button>
+          <button class="nav-item" data-view="warehouses"><span>◐</span> Almacenes</button>
+          <button class="nav-item" data-view="suppliers"><span>⌁</span> Proveedores</button>
+          <button class="nav-item" data-view="reports"><span>☰</span> Reportes</button>
+        </nav>
+
+        <div class="sidebar-card">
+          <div class="mini-row">
+            <span>Stock crítico</span>
+            <strong id="criticoCount">0</strong>
+          </div>
+          <div class="mini-row">
+            <span>Productos</span>
+            <strong id="totalProductos">0</strong>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <h1 id="pageTitle">Dashboard</h1>
+            <p id="pageSubtitle">Resumen del negocio</p>
+          </div>
+
+          <div class="header-actions">
+            <div class="toolbar-search">
+              <span>⌕</span>
+              <input type="text" id="globalSearch" placeholder="Buscar producto" />
+            </div>
+            <button class="secondary-btn" id="exportBtn">Exportar</button>
+            <button class="primary-btn" id="quickActionBtn">+ Nueva operación</button>
+          </div>
+        </header>
+
+        <section id="mainContent"></section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"},{
